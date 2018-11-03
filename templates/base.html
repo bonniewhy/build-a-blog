@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+<div id="navigation">
+    <ul>
+        <li><a href="/">Main page</a></li>
+        <li><a href="/newpost">Create new post</a></li>
+    </ul>
+</div>
+<div>
+    {% with messages = get_flashed_messages(with_categories = True) %}
+        <ul>
+        {% for category, message in messages %}
+            <li>{{message}}</li>
+        {% endfor %}
+        </ul>
+    {% endwith %}
+</div>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
