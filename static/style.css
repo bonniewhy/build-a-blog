@@ -84,8 +84,10 @@ body {
 }
 
 h1 {
+    position: relative;
     font-family: 'Bungee', sans-serif;
     font-size: 100px;
+    z-index: -1;
 }
 
 h2 {
