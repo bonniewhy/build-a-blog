@@ -22,13 +22,15 @@ class Blog(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     post_id = request.args.get('id')
+    title = "Build a Blog"
 
     if post_id:
         blog = Blog.query.filter_by(id = post_id).all()
-        return render_template('index.html', blog = blog, post_id = post_id)
+        # title = blog.title
+        return render_template('index.html', title = title, blog = blog, post_id = post_id)
     else:
-        blog = Blog.query.all()
-        return render_template('index.html', title = "Build a Blog", blog = blog)
+        blog = Blog.query.order_by(Blog.id.desc()).all()
+        return render_template('index.html', title = title, blog = blog)
 
 @app.route('/newpost', methods=['POST', 'GET'])
 def create_new_post():

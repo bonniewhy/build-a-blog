@@ -2,12 +2,14 @@
 <html>
 <head>
     <title>{{title}}</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Nanum+Myeongjo:800|Archivo+Black" rel="stylesheet">
 </head>
 <body>
 <div id="navigation">
     <ul>
-        <li><a href="/">Main page</a></li>
-        <li><a href="/newpost">Create new post</a></li>
+        <li><a href="/">Blog Entries</a></li>
+        <li><a href="/newpost">Write a Post</a></li>
     </ul>
 </div>
 <div>
